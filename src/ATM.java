@@ -5,7 +5,7 @@ public class ATM {
         return head == null;
     }
 
-    //
+    // method addAccount untuk menambahkan akun baru ke dalam linked list
     public void addAccount(String name, double saldo) {
         Account newAccount = new Account(name, saldo);
         newAccount.setNext(head);
@@ -14,7 +14,9 @@ public class ATM {
 
     // Implementasi method withdrawFromAccount dan depositToAccount
     public void withdrawFromAccount(String name, double jumlah) {
+        // current, variabel sementara untuk menelusuri linked list dari Account
         Account current = head;
+        // Mencari akun dengan nama yang sesuai
         while (current != null) {
             if (current.getName().equals(name)) {
                 current.withdraw(jumlah);
@@ -26,6 +28,7 @@ public class ATM {
     }
 
     public void depositToAccount(String name, double jumlah) {
+        // current, variabel sementara untuk menelusuri linked list dari Account
         Account current = head;
         while (current != null) {
             if (current.getName().equals(name)) {
@@ -42,7 +45,7 @@ public class ATM {
             System.out.println("Tidak ada akun yang terdaftar");
         } else {
             System.out.println("=====================================");
-            System.out.println("| No.\t| Nama\t\t| Saldo\t\t\t|");
+            System.out.println("| No.\t| Nama\t\t| Saldo         |");
             System.out.println("-------------------------------------");
             Account current = head;
             int i = 1;

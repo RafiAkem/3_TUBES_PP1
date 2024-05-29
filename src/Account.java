@@ -3,11 +3,13 @@ public class Account {
     private double saldo;
     private Account next;
 
+    // konstruktor untuk menginisialisasi nama dan saldo
     public Account(String name, double saldo) {
         this.name = name;
         this.saldo = saldo;
     }
 
+    // setter dan getter
     public void setNext(Account next) {
         this.next = next;
     }
@@ -24,10 +26,12 @@ public class Account {
         return name;
     }
 
+    // method deposit dimana saldo akan bertambah sesuai jumlah yang diinput
     public void deposit(double jumlah) {
         this.saldo += jumlah;
     }
 
+    // method withdraw dimana jika saldo mencukupi, saldo akan berkurang sesuai jumlah yang diinput
     public void withdraw(double jumlah) {
         if (jumlah <= this.saldo) {
             this.saldo -= jumlah;
