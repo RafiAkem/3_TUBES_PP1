@@ -11,7 +11,8 @@ public class Main {
             System.out.println("| 2. Tarik Saldo                  |");
             System.out.println("| 3. Deposit Saldo                |");
             System.out.println("| 4. Cek Saldo                    |");
-            System.out.println("| 5. Keluar                       |");
+            System.out.println("| 5. Hapus Akun                   |");
+            System.out.println("| 6. Keluar                       |");
             System.out.println("===================================");
             System.out.print("Pilih opsi: ");
             int option = scanner.nextInt();
@@ -43,9 +44,16 @@ public class Main {
                     atm.checkSaldo();
                     break;
                 case 5:
+                    System.out.print("Masukkan nama akun yang ingin dihapus: ");
+                    String nameDelete = scanner.next();
+                    atm.removeAccount(nameDelete);
+                    scanner.close();
+                    break;
+                case 6:
                     System.out.println("Terima kasih telah menggunakan layanan kami.");
                     scanner.close();
                     return;
+
                 default:
                     System.out.println("Opsi tidak valid. Silakan coba lagi.");
             }

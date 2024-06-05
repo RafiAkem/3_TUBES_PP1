@@ -12,6 +12,29 @@ public class ATM {
         head = newAccount;
     }
 
+    //method removeAccount untuk menghapus akun dari linked list
+    public void removeAccount(String name) {
+        if (isEmpty()) {
+            System.out.println("Tidak ada akun yang terdaftar");
+        } else {
+            Account current = head;
+            Account prev = null;
+            while (current != null) {
+                if (current.getName().equals(name)) {
+                    if (prev == null) {
+                        head = current.getNext();
+                    } else {
+                        prev.setNext(current.getNext());
+                    }
+                    return;
+                }
+                prev = current;
+                current = current.getNext();
+            }
+            System.out.println("Akun dengan nama " + name + " tidak ditemukan");
+        }
+    }
+
     // Implementasi method withdrawFromAccount dan depositToAccount
     public void withdrawFromAccount(String name, double jumlah) {
         // current, variabel sementara untuk menelusuri linked list dari Account
